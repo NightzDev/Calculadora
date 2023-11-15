@@ -23,6 +23,7 @@ public class BasicController {
       return getResult(augend.add(addend));
    }
 
+
    @GetMapping("/subtract")
    public ApiResult subtract(@RequestParam BigDecimal minuent, @RequestParam BigDecimal subtrahend) {
       return getResult(minuent.subtract(subtrahend));
