@@ -6,6 +6,8 @@ import static com.example.calculator.model.ResultBuilder.getResultFromError;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,11 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.calculator.model.ApiResult;
 
 
-@RestController
+@Controller
 @RequestMapping("/scientific")
 public class ScientificController {
 
-   private final ScientificCalculatorService _scientificCalculator;
+   @Autowired
+   private ScientificCalculatorService _scientificCalculator;
 
    public ScientificController( ScientificCalculatorService scientificCalculator) {
       _scientificCalculator = scientificCalculator;
