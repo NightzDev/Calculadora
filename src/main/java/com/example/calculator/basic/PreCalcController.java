@@ -3,6 +3,7 @@ package com.example.calculator.basic;
 import com.example.calculator.Juros.JurosComp;
 import com.example.calculator.Juros.JurosSimples;
 import com.example.calculator.PreCalc.Equation2nd;
+import com.example.calculator.Triangle.HeronFormula;
 import com.example.calculator.model.ApiResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +31,9 @@ public class PreCalcController {
    @Autowired
    private JurosSimples jurosSimples;
 
+   @Autowired
+   private HeronFormula heronFormula;
+
    @GetMapping("/equation")
    public List<Double> equation(@RequestParam int a, @RequestParam int b, @RequestParam int c){
       return equation2nd.bhaskara(a,b,c);
@@ -45,4 +49,8 @@ public class PreCalcController {
       return jurosComp.JurosComposto(p,t,r,n);
    }
 
+   @GetMapping("/heron")
+   public double HeronFormula(@RequestParam double xA, @RequestParam double xB, @RequestParam double xC, @RequestParam double yA, @RequestParam double yB, @RequestParam double yC){
+      return heronFormula.HeronFormula(xA, xB, xC, yA, yB, yC);
+   }
 }

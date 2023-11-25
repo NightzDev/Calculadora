@@ -1,40 +1,32 @@
 package com.example.calculator.Triangle;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.List;
 import java.util.Locale;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
-@Service;
+@Service
+public class HeronFormula {
 
-public class Heronformula {
-
-    public Double HeronFormula (double xA, double xB, double xC, double yA, double yB, double yC) { 
-        LinkedList<Double> list = new LinkedList<>();
-        //Calculo das areas do trianguilo X e  triangulo Y
-
-        System.out.println("Digite os dados do triangulo X: ");
-        System.out.println("Digite os dados do triangulo Y: ");
-        
-
+    public Double HeronFormula (double xA, double xB, double xC, double yA, double yB, double yC) {
         //Calculo para achar o Perimetro do Triangulo X
         double p = (xA + xB + xC) / 2;
         double areaX = Math.sqrt(p * (p - xA) * (p - xB) * (p - xC));
 
         p = (yA + yB + yC) / 2;
         double areaY = Math.sqrt(p * (p - yA) * (p - yB) * (p - yC));
-        
-        System.out.printf("Triangle X area: %.4f%n", areaX);
+
         System.out.printf("Triangle Y area: %.4f%n", areaY);
+        System.out.printf("Triangle X area: %.4f%n", areaX);
 
         if(areaX > areaY) {
-            System.out.println("Area maior é X");
+            return areaX;
         }
         else {
-            System.out.println("Area maior é Y");
+            return areaY;
         }
-    }
-
     }
 }
