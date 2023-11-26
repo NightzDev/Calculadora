@@ -1,5 +1,9 @@
 package com.example.calculator.Fisica;
 
+
+import org.springframework.stereotype.Service;
+
+@Service
 public class VelocidadeMedia {
 
 	public double Vmedia(double ds, double dt) {
