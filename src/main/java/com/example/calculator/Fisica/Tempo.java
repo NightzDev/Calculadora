@@ -1,7 +1,7 @@
 package com.example.calculator.Fisica;
 
 public class Tempo {
-	public double Vmedia(double ds, double vm) {
+	public double itempo(double ds, double vm) {
 		
 		double dt;
 	/*   

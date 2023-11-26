@@ -2,16 +2,17 @@ package com.example.calculator.Fisica;
 
 public class Deslocamento {
 	
-	public double Desloc(double si, double v, double t, double ti, double tf) {
+	public double Desloc(double si, double v, double dt) {
 		
-		/*      S= Posição(deslocamento)
+		/*
+		        S= Si+v.dt
+		        S= Posição(deslocamento)
 		        Si= posição inicial
 				v= velocidade
-				t= intervalo de tempo
-				ti=tempo inicial
-				tf=tempo final */
+				dt= intervalo de tempo
+				 */
 		double s;
-		s= si + (v * (tf-ti));
+		s= si + (v * dt);
 		return s;
 		
 	}
