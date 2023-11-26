@@ -2,11 +2,14 @@ package com.example.calculator.basic;
 
 import com.example.calculator.Juros.JurosComp;
 import com.example.calculator.Juros.JurosSimples;
+import com.example.calculator.Polinomios.Polinomio;
 import com.example.calculator.PreCalc.Equation2nd;
 import com.example.calculator.Triangle.HeronFormula;
 import com.example.calculator.model.ApiResult;
+import com.google.gson.JsonObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.spring.web.json.Json;
 
 import java.awt.*;
 import java.math.BigDecimal;
@@ -34,6 +37,9 @@ public class PreCalcController {
    @Autowired
    private HeronFormula heronFormula;
 
+   @Autowired
+   private Polinomio polinomio;
+
    @GetMapping("/equation")
    public List<Double> equation(@RequestParam int a, @RequestParam int b, @RequestParam int c){
       return equation2nd.bhaskara(a,b,c);
@@ -52,5 +58,10 @@ public class PreCalcController {
    @GetMapping("/heron")
    public double HeronFormula(@RequestParam double xA, @RequestParam double xB, @RequestParam double xC, @RequestParam double yA, @RequestParam double yB, @RequestParam double yC){
       return heronFormula.HeronFormula(xA, xB, xC, yA, yB, yC);
+   }
+
+   @GetMapping("/polinomios")
+   public List<String> PolinomioEndpoint(@RequestParam double[] A, @RequestParam double[] B, int x){
+      return polinomio.PolinomiosService(A,B,x);
    }
 }

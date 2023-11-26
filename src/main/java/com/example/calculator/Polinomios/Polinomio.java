@@ -1,6 +1,13 @@
 package com.example.calculator.Polinomios;
 
-public class polinomios {
+
+import org.springframework.stereotype.Service;
+
+import java.util.LinkedList;
+import java.util.List;
+
+@Service
+public class Polinomio {
     private double[] coeficientes;
 
     public Polinomio(double[] coeficientes) {
@@ -55,7 +62,18 @@ public class polinomios {
         return sb.toString();
     }
 
-    public static void main(String[] args) {
+    public List<String> PolinomiosService(double[] A, double[]B, int x){
+        Polinomio p1 = new Polinomio(A);
+        Polinomio p2 = new Polinomio(B);
+        LinkedList<String> list = new LinkedList<>();
+        list.add(p1.somar(p2).toString());
+        list.add(p1.multiplicar(p2).toString());
+        list.add(String.valueOf(p1.calcular(x)));
+
+        return list;
+    }
+
+    public void main(String[] args) {
         Polinomio p1 = new Polinomio(new double[]{2, -3, 1});  // 2x^2 - 3x + 1
         Polinomio p2 = new Polinomio(new double[]{1, 2});     // x + 2
 

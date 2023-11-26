@@ -1,5 +1,9 @@
 package com.example.calculator.Fisica;
 
+
+import org.springframework.stereotype.Service;
+
+@Service
 public class Deslocamento {
 	
 	public double Desloc(double si, double v, double dt) {

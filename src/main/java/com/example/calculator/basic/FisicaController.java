@@ -51,8 +51,8 @@ public class FisicaController {
    }
 
    @GetMapping("/relatividade")
-   public double relatividade(@RequestParam double Mass, @RequestParam double Vlight){
-      return relatividade.Relatividade(Mass, Vlight);
+   public double relatividade(@RequestParam double Mass){
+      return relatividade.Relatividade(Mass);
    }
 
 }

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class Relatividade {
 
-	public double Relatividade(double Mass, double Vlight) {
-		return Mass * Math.pow(Vlight, 2);
+	public double Relatividade(double Mass) {
+		return Mass * Math.pow(299792458, 2);
 	}
 }
