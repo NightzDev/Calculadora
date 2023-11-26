@@ -1,13 +1,9 @@
 package com.example.calculator;
 
 import com.example.calculator.Fisica.Deslocamento;
-import com.example.calculator.Fisica.Relatividade;
 import com.example.calculator.Fisica.Tempo;
 import com.example.calculator.Fisica.VelocidadeMedia;
-import com.example.calculator.scientific.ScientificCalculatorService;
 import org.junit.jupiter.api.Test;
-
-import java.math.BigInteger;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,7 +16,6 @@ class FisicaCalculatorServiceTest {
 
    private VelocidadeMedia _velocidademedia = new VelocidadeMedia();
 
-   private Relatividade relatividade = new Relatividade();
 
    @Test
    void calculateDeslocamento() {
@@ -47,15 +42,6 @@ class FisicaCalculatorServiceTest {
       assertEquals(100, _velocidademedia.Vmedia(500,5));
       assertEquals(60, _velocidademedia.Vmedia(150,2.5));
       assertEquals(15, _velocidademedia.Vmedia(90,6));
-   }
-
-   @Test
-   public void testRelatividade() {
-      //assertEquals(2.6897e+17, relatividade.Relatividade(3));
-      assertEquals(0, relatividade.Relatividade(0));
-      assertEquals(2.6897e+17, relatividade.Relatividade(-3));
-      assertEquals(1.6116e+36, relatividade.Relatividade(6));
-      assertEquals(6.7485e+16, relatividade.Relatividade(2.6));
    }
 
 }

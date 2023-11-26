@@ -9,14 +9,8 @@ import java.math.BigDecimal;
 public class JurosComp {
 
 	public double JurosComposto(double p,double t, double r, double n) {
-		
-		double valorfinal;  /*p == valor inicial ; t == tempo;
-        r == taxa ; n == período /* */
-		
-		valorfinal = p * Math.pow(1 + (r/n) , n*t);
-		System.out.println("Valor apos " + t + " anos: " + valorfinal);
-		
-		double juroscalculado = valorfinal - p;
-		return juroscalculado;
+		double valorFinal = p * Math.pow(1 + r / n, n * t);
+		double jurosCalculado = valorFinal - p;
+		return jurosCalculado;
 	}
 }

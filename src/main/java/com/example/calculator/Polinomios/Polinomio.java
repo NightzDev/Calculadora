@@ -25,12 +25,15 @@ public class Polinomio {
     public Polinomio somar(Polinomio outro) {
         int tamanhoMaior = Math.max(coeficientes.length, outro.coeficientes.length);
         double[] novoCoeficientes = new double[tamanhoMaior];
+
         for (int i = 0; i < coeficientes.length; i++) {
             novoCoeficientes[i] += coeficientes[i];
         }
+
         for (int i = 0; i < outro.coeficientes.length; i++) {
             novoCoeficientes[i] += outro.coeficientes[i];
         }
+
         return new Polinomio(novoCoeficientes);
     }
 
