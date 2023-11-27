@@ -24,18 +24,18 @@ public class FisicaController {
    private VelocidadeMedia velocidadeMedia;
 
    @GetMapping("/deslocamento")
-   public double desloc(@RequestParam double si, @RequestParam double v,@RequestParam double dt){
-      return deslocamento.Desloc(si, v,dt);
+   public double desloc(@RequestParam double posInicial, @RequestParam double velocidade,@RequestParam double intervaloTempo){
+      return deslocamento.Desloc(posInicial,velocidade,intervaloTempo);
    }
 
    @GetMapping("/tempoVelocidade")
-   public double tempoVelocidade(@RequestParam double ds, @RequestParam double vm){
-      return tempo.itempo(ds,vm);
+   public double tempoVelocidade(@RequestParam double deslocamento, @RequestParam double velocidadeMedia){
+      return tempo.itempo(deslocamento,velocidadeMedia);
    }
 
    @GetMapping("/Vmedia")
-   public double vmedia(@RequestParam double ds, @RequestParam double vm){
-      return velocidadeMedia.Vmedia(ds,vm);
+   public double vmedia(@RequestParam double deslocamento, @RequestParam double velocMedia){
+      return velocidadeMedia.Vmedia(deslocamento,velocMedia);
    }
 
 }
