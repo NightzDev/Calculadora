@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class CalculatorApplicationTests {
 
    @Test
-   public void testAdd() {
+   public void testeAdd() {
       // Arrange
       BigInteger augend = new BigInteger("5");
       BigInteger addend = new BigInteger("3");
@@ -24,7 +24,7 @@ class CalculatorApplicationTests {
    }
 
    @Test
-   public void testSubtract() {
+   public void testeSubtract() {
       // Arrange
       BigInteger minuend = new BigInteger("8");
       BigInteger subtrahend = new BigInteger("3");
@@ -37,7 +37,7 @@ class CalculatorApplicationTests {
    }
 
    @Test
-   public void testMultiply() {
+   public void testeMultiply() {
       // Arrange
       BigInteger multiplicand = new BigInteger("4");
       BigInteger multiplier = new BigInteger("3");
@@ -50,7 +50,7 @@ class CalculatorApplicationTests {
    }
 
    @Test
-   public void testDivide() {
+   public void testeDivide() {
       // Arrange
       BigInteger dividend = new BigInteger("15");
       BigInteger divisor = new BigInteger("3");

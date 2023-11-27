@@ -70,19 +70,13 @@ class IntegrationTest {
 
    @Test
    public void testSubtractionEndpoint() throws Exception {
-      // Valores para a operação de subtração
       int minuent = 231;
       int subtrahend = 213231;
-
-      // URL do endpoint
       String url = "http://localhost:8080/calculator/basic/subtract?minuent=" + minuent + "&subtrahend=" + subtrahend;
 
-      // Fazer a requisição e obter a resposta
       HttpResponse<JsonNode> response = Unirest.get(url)
               .header("accept", "application/json")
               .asJson();
-
-      // Verificar o código de status e o resultado da subtração
       assertEquals(200, response.getStatus());
       assertEquals("-212000", response.getBody().getObject().getString("result"));
    }
