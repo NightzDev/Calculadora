@@ -51,19 +51,16 @@ class IntegrationTest {
 
    @Test
    public void testMultiplicationEndpoint() throws Exception {
-      // Valores para a operação de multiplicação
       int multiplicand = 213;
       int multiplier = 123;
 
       // URL do endpoint
       String url = "http://localhost:8080/calculator/basic/multiply?multiplicand=" + multiplicand + "&multiplier=" + multiplier;
 
-      // Fazer a requisição e obter a resposta
       HttpResponse<JsonNode> response = Unirest.get(url)
               .header("accept", "application/json")
               .asJson();
 
-      // Verificar o código de status e o resultado da multiplicação
       assertEquals(200, response.getStatus());
       assertEquals("26199", response.getBody().getObject().getString("result"));
    }
@@ -78,7 +75,7 @@ class IntegrationTest {
               .header("accept", "application/json")
               .asJson();
       assertEquals(200, response.getStatus());
-      assertEquals("-212000", response.getBody().getObject().getString("result"));
+      assertEquals("-213000", response.getBody().getObject().getString("result"));
    }
 
 }

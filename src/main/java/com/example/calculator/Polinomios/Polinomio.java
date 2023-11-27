@@ -14,30 +14,30 @@ public class Polinomio {
         this.coeficientes = coeficientes;
     }
 
-    public double calcular(double x) {
-        double resultado = 0;
-        for (int i = 0; i < coeficientes.length; i++) {
-            resultado += coeficientes[i] * Math.pow(x, i);
-        }
-        return resultado;
-    }
-
-    public Polinomio somar(Polinomio outro) {
-        int tamanhoMaior = Math.max(coeficientes.length, outro.coeficientes.length);
-        double[] novoCoeficientes = new double[tamanhoMaior];
-
-        for (int i = 0; i < coeficientes.length; i++) {
-            novoCoeficientes[i] += coeficientes[i];
+        public double calcular(double x) {
+            double resultado = 0;
+            for (int i = 0; i < coeficientes.length; i++) {
+                resultado += coeficientes[i] * Math.pow(x, i);
+            }
+            return resultado;
         }
 
-        for (int i = 0; i < outro.coeficientes.length; i++) {
-            novoCoeficientes[i] += outro.coeficientes[i];
+        public Polinomio somar(Polinomio outro) {
+            int tamanhoMaior = Math.max(coeficientes.length, outro.coeficientes.length);
+            double[] novoCoeficientes = new double[tamanhoMaior];
+
+            for (int i = 0; i < coeficientes.length; i++) {
+                novoCoeficientes[i] += coeficientes[i];
+            }
+
+            for (int i = 0; i < outro.coeficientes.length; i++) {
+                novoCoeficientes[i] += outro.coeficientes[i];
+            }
+
+            return new Polinomio(novoCoeficientes);
         }
 
-        return new Polinomio(novoCoeficientes);
-    }
-
-    public Polinomio multiplicar(Polinomio outro) {
+        public Polinomio multiplicar(Polinomio outro) {
         int novoTamanho = coeficientes.length + outro.coeficientes.length - 1;
         double[] novoCoeficientes = new double[novoTamanho];
         for (int i = 0; i < coeficientes.length; i++) {
