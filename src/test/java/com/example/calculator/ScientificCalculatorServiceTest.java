@@ -11,12 +11,12 @@ import org.junit.jupiter.api.Test;
 import com.example.calculator.scientific.ScientificCalculatorService;
 
 
-class ScientificCalculatorServiceTest {
+class ScientificCalculatorTest {
 
    private ScientificCalculatorService _scientificCalculatorService = new ScientificCalculatorService();
 
    @Test
-   void calculateFactorial() {
+   void calculateFactorialTest() {
       assertEquals(BigInteger.ONE, _scientificCalculatorService.calculateFactorial(0));
       assertEquals(BigInteger.ONE, _scientificCalculatorService.calculateFactorial(1));
       assertEquals(BigInteger.TWO, _scientificCalculatorService.calculateFactorial(2));
@@ -24,13 +24,13 @@ class ScientificCalculatorServiceTest {
    }
 
    @Test
-   void calculateFactorial_BigNumber() {
+   void calculateFactorial_BigNumberTest() {
       assertEquals(BigInteger.valueOf(2432902008176640000L), _scientificCalculatorService.calculateFactorial(20));
       assertEquals(new BigInteger("815915283247897734345611269596115894272000000000"), _scientificCalculatorService.calculateFactorial(40));
    }
 
    @Test
-   void isPrime() {
+   void isPrimeTest() {
       assertFalse(_scientificCalculatorService.isPrime(1));
       assertTrue(_scientificCalculatorService.isPrime(2));
       assertTrue(_scientificCalculatorService.isPrime(3));
@@ -40,7 +40,7 @@ class ScientificCalculatorServiceTest {
    }
 
    @Test
-   void isPrime_BiggerNumbers() {
+   void isPrime_BiggerNumber() {
       assertTrue(_scientificCalculatorService.isPrime(99877));
       assertFalse(_scientificCalculatorService.isPrime(324234));
    }
